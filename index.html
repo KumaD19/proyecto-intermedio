@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Get real-time weather updates, forecasts, and alerts for any location. Plan ahead with accurate 7-day forecasts and live conditions. Stay prepared with our app!">
+    <meta property="og:title" content="Weather app">
+    <meta property="og:image" content="">
+    <meta property="og:description" content="Get real-time weather updates, forecasts, and alerts for any location. Plan ahead with accurate 7-day forecasts and live conditions. Stay prepared with our app!">
+    <meta property="og:url" content=""> 
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./js/index.js" defer></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navigation">
+        <section class="navigation__menu">
+          <div class="navigation__links">
+            <a href="#weather" data-page="weather" class="navigation__link" aria-label="Go to Home"
+              >Home</a
+            >
+            <a href="#download" data-page="download" class="navigation__link" aria-label="Go to download Page"
+              >Download app</a
+            >
+            <a href="#contact" data-page="contact" class="navigation__link" aria-label="Go to contact Page"
+              >Contact Us</a
+            >
+          </div>
+        </section>
+      </nav>
+    </header>
+
+    <aside class="aside">
+      <section class="aside__container">
+        <h1>Weather App</h1>
+        <div class="aside__map-navigation">
+          <h3>Select Area</h3>
+          <div class="aside__carousel">
+            <img
+              src="./img/north america.png"
+              class="aside__carousel-item active"
+              alt="North America"
+              aria-selected="true"
+            />
+            <img
+              src="./img/oceania.png"
+              class="aside__carousel-item"
+              alt="Oceania"
+              aria-selected="false"
+            />
+            <img
+              src="./img/south america.png"
+              class="aside__carousel-item"
+              alt="South America"
+              aria-selected="false"
+            />
+            <button class="aside__carousel-button prev" aria-label="Previous slide">&lt;</button>
+            <button class="aside__carousel-button next" aria-label="Next slide">&gt;</button>
+          </div>
+          <p id="location">Brooklyn,New York,USA</p>
+        </div>
+      </section>
+    </aside>
+
+    <main>
+      <section id="weather" class="weather page">
+        <div class="weather__title-container">
+          <div>
+            <svg
+              class="weather__svg-location"
+              role="img"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Google Maps</title>
+              <path
+                d="M19.527 4.799c1.212 2.608.937 5.678-.405 8.173-1.101 2.047-2.744 3.74-4.098 5.614-.619.858-1.244 1.75-1.669 2.727-.141.325-.263.658-.383.992-.121.333-.224.673-.34 1.008-.109.314-.236.684-.627.687h-.007c-.466-.001-.579-.53-.695-.887-.284-.874-.581-1.713-1.019-2.525-.51-.944-1.145-1.817-1.79-2.671L19.527 4.799zM8.545 7.705l-3.959 4.707c.724 1.54 1.821 2.863 2.871 4.18.247.31.494.622.737.936l4.984-5.925-.029.01c-1.741.601-3.691-.291-4.392-1.987a3.377 3.377 0 0 1-.209-.716c-.063-.437-.077-.761-.004-1.198l.001-.007zM5.492 3.149l-.003.004c-1.947 2.466-2.281 5.88-1.117 8.77l4.785-5.689-.058-.05-3.607-3.035zM14.661.436l-3.838 4.563a.295.295 0 0 1 .027-.01c1.6-.551 3.403.15 4.22 1.626.176.319.323.683.377 1.045.068.446.085.773.012 1.22l-.003.016 3.836-4.561A8.382 8.382 0 0 0 14.67.439l-.009-.003zM9.466 5.868L14.162.285l-.047-.012A8.31 8.31 0 0 0 11.986 0a8.439 8.439 0 0 0-6.169 2.766l-.016.018 3.665 3.084z"
+              />
+            </svg>
+            <p id="main-location"></p>
+            <span id="main-date"></span>
+          </div>
+          <div class="weather__information-container">
+            <span class="weather__temperature">48°C</span>
+            <h2>Cloudy<br />with Heavy Rain</h2>
+          </div>
+        </div>
+        <div class="weather__description-container">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+            consectetur lorem non imperdiet aliquam. Curabitur ex nisi, vehicula
+            eu orci id, ultrices pretium sem. Curabitur non magna hendrerit,
+            venenatis tellus non, mollis ipsum. Aliquam erat volutpat. Integer
+            ornare condimentum dapibus. Vestibulum ante ipsum primis in faucibus
+            orci luctus et ultrices posuere cubilia curae; Nulla facilisi. In
+            hac habitasse platea dictumst. Quisque purus nisi, condimentum in
+            congue eget, blandit et risus.
+          </p>
+        </div>
+        <section class="weather__cards-container" role="list">
+          <div class="weather__cards" role="listitem">
+            <h4>Monday</h4>
+            <div>
+              <span>-2°</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-cloud-rain-fill"
+                viewBox="0 0 16 16"
+                aria-role="Cloudy with Rain"
+              >
+                <path
+                  d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317m3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 1 1-.948-.316l1-3a.5.5 0 0 1 .632-.317m3 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317m3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 1 1-.948-.316l1-3a.5.5 0 0 1 .632-.317m.247-6.998a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="weather__cards"role='listitem'>
+            <h4>Wednesday</h4>
+            <div>
+              <span>-2°</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-cloud-fill"
+                viewBox="0 0 16 16"
+                aria-label="Cloudy"
+              >
+                <path
+                  d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="weather__cards" role="listitem">
+            <h4>Thursday</h4>
+            <div>
+              <span>-2°</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-cloud-rain-fill"
+                viewBox="0 0 16 16"
+                aria-label="Cloudy with Rain"
+              >
+                <path
+                  d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317m3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 1 1-.948-.316l1-3a.5.5 0 0 1 .632-.317m3 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317m3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 1 1-.948-.316l1-3a.5.5 0 0 1 .632-.317m.247-6.998a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="weather__cards" role="listitem">
+            <h4>Friday</h4>
+            <div>
+              <span>-2°</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-cloud-sun-fill"
+                viewBox="0 0 16 16"
+                aria-label="Cloudy with Sun"
+              >
+                <path
+                  d="M11.473 11a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5z"
+                />
+                <path
+                  d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708zm1.734 3.374a2 2 0 1 1 3.296 2.198q.3.423.516.898a3 3 0 1 0-4.84-3.225q.529.017 1.028.129m4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377M14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="weather__cards" role="listitem">
+            <h4>Saturday</h4>
+            <div>
+              <span>-2°</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-cloud-sun-fill"
+                viewBox="0 0 16 16"
+                aria-label="Cloudy with Sun"
+              >
+                <path
+                  d="M11.473 11a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5z"
+                />
+                <path
+                  d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708zm1.734 3.374a2 2 0 1 1 3.296 2.198q.3.423.516.898a3 3 0 1 0-4.84-3.225q.529.017 1.028.129m4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377M14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="weather__cards" role="listitem">
+            <h4>Sunday</h4>
+            <div>
+              <span>-5°</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="bi bi-cloud-sun-fill"
+                viewBox="0 0 16 16"
+                aria-label="Cloudy with Sun"
+              >
+                <path
+                  d="M11.473 11a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5z"
+                />
+                <path
+                  d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708zm1.734 3.374a2 2 0 1 1 3.296 2.198q.3.423.516.898a3 3 0 1 0-4.84-3.225q.529.017 1.028.129m4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377M14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"
+                />
+              </svg>
+            </div>
+          </div>
+        </section>
+      </section>
+      <section id="download" class="download page">
+        <section class="download__container">
+          <section>
+            <div class="download__description">
+              <h1>
+                Get our <span>Weather</span> app <br />and make your life easier
+              </h1>
+              <div>
+                <button class="download__language">Change Language</button>
+                <p id="language" lang="en">
+                  Get accurate, real-time weather updates with our easy-to-use
+                  app! Plan your day with personalized forecasts and instant
+                  alerts so you're never caught off guard. Download now and stay
+                  ahead of the weather!
+                </p>
+              </div>
+            </div>
+            <div class="download__container-links">
+              <a>
+                <svg
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Google Play</title>
+                  <path
+                    d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z"
+                  />
+                </svg>
+                <p>Get it on <br /><span>Google Play</span></p>
+              </a>
+              <a>
+                <svg
+                  role="img"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <title>Apple</title>
+                  <path
+                    d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"
+                  />
+                </svg>
+                <p>Download on the <br /><span>Apple Store</span></p>
+              </a>
+            </div>
+          </section>
+          <img
+            src="./img/weather-svg.png"
+            alt="Woman looking at phone it's displaying the weather"
+          />
+        </section>
+      </section>
+      <section id="contact" class="contact page">
+        <section class="contact__container">
+          <h1>Contact Us</h1>
+          <p>
+            If you have any questions or suggestions about our weather app, feel
+            free to reach out. We're here to assist and always welcome your
+            feedback to improve your experience
+          </p>
+          <div class="contact__contact-us-container">
+            <div class="contact__contact-us">
+              <ion-icon name="call-sharp" aria-label="Cell phone icon"></ion-icon>
+              <div>
+                <h4>Call us</h4>
+                <ul>
+                  <li>+1-940-394-2948</li>
+                  <li>+1-740-324-3498</li>
+
+                </ul>
+                
+              </div>
+            </div>
+            <div class="contact__contact-us">
+              <ion-icon name="navigate-sharp" aria-label="Email Icon"></ion-icon>
+              <div>
+                <h4>Email us</h4>
+                <ul>
+                  <li>example@somewhere.com</li>
+                  <li>examlle@som2whe0e.com</li>
+                </ul>
+                
+              </div>
+            </div>
+            <div class="contact__contact-us">
+              <ion-icon name="navigate-sharp" aria-label="Location Icon"></ion-icon>
+              <div>
+                <h4>Our Location</h4>
+                <span>34 Madison Street<br />New York</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <form action="/submit" method="post">
+              <section class="contact__form--email">
+                <div>
+                  <label for="name">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your full name"
+                    aria-label="Full name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="Email">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email Address"
+                    aria-label="Email Address"
+                    required
+                  />
+                </div>
+              </section>
+              <section class="contact__form--phone">
+                <div>
+                  <label for="phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                    aria-label="Phone Number"
+                  />
+                </div>
+                <div>
+                  <label for="subject">Subject</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Enter the subject of your message"
+                    aria-label="Subject"
+                    required
+                  />
+                </div>
+              </section>
+              <section class="contact__form--message">
+                <div>
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Write your message here"
+                    aria-label="Message"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" aria-label="Submit your message">
+                  Submit
+                </button>
+              </section>
+            </form>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <section class="footer__container-links">
+        <div class="footer__box" data-section="company">
+          <h5>Company</h5>
+          <ul class="footer__link">
+            <li><a>About us</a></li>
+            <li><a>Contact us</a></li>
+            <li><a>Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer__box" data-section="product">
+          <h5>Product</h5>
+          <ul class="footer__link">
+           <li><a>Pricing</a></li>
+            <li><a>News</a></li>
+            <li><a>Features</a></li>
+            <li><a>Support</a></li>
+          </ul>
+        </div>
+        <div class="footer__box" data-section="services">
+          <h5>Services</h5>
+          <ul class="footer__link">
+            <li><a>Api for Weather</a></li>
+            <li><a>Api for Maps</a></li>
+          </ul>
+        </div>
+        <div class="footer__box" data-section="legal">
+          <h5>Legal</h5>
+          <ul class="footer__link">
+            <li><a>Privacy Policy</a></li>
+            <li><a>Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </section>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

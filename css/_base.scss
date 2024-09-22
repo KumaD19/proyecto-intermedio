@@ -1,0 +1,28 @@
+@mixin tablet-size {
+  @media screen and (max-width: 73rem) {
+    @content;
+  }
+}
+
+@mixin mobile-size {
+  @media screen and (max-width: 55rem) {
+    @content;
+  }
+}
+
+@mixin mobile-tiny {
+  @media screen and (max-width: 39rem) {
+    @content;
+  }
+}
+
+%contact__form {
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    input {
+      margin-bottom: 10px;
+    }
+  }
+}
